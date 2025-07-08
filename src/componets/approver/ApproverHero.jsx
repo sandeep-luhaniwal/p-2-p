@@ -2,52 +2,51 @@
 
 import React, { useState, useRef, useEffect } from "react";
 import Icons from "../common/Icons";
-import Link from "next/link";
 
 const merchants = [
     {
-        name: "PayEase",
-        deposit: "35,0000",
-        limit: "40,0000",
-        email: "PayEase@gmail.com",
-        status: "Inactive",
-        created: "Apr 03, 2022, 14:15 PM",
-    },
-    {
-        name: "CashNow",
-        deposit: "70,0000",
-        limit: "85,0000",
-        email: "CashNow@gmail.com",
-        status: "Active",
-        created: "Apr 04, 2022, 10:45 AM",
-    },
-    {
-        name: "PayFast",
-        deposit: "45,0000",
-        limit: "55,0000",
-        email: "PayFast@gmail.com",
-        status: "Active",
-        created: "Apr 05, 2022, 13:30 PM",
-    },
-    {
-        name: "MoneyExpress",
-        deposit: "80,0000",
-        limit: "90,0000",
-        email: "MoneyExpress@gmail.com",
-        status: "Inactive",
-        created: "Apr 06, 2022, 16:00 PM",
-    },
-    {
-        name: "PayQuick",
+        name: "Rapidpay Solutions",
         deposit: "50,0000",
-        limit: "60,0000",
-        email: "PayQuick@gmail.com",
+        limit: "80,0000",
+        email: "Rapidpay@gmail.com",
         status: "Active",
-        created: "Apr 07, 2022, 09:30 AM",
-    }
+        created: "Mar 23, 2022, 13:00 PM",
+    },
+    {
+        name: "QuickPay",
+        deposit: "50,0000",
+        limit: "50,0000",
+        email: "QuickPay@gmail.com",
+        status: "Active",
+        created: "Mar 23, 2022, 13:00 PM",
+    },
+    {
+        name: "FastPay Gateway",
+        deposit: "10,00000",
+        limit: "50,0000",
+        email: "FastPay@gmail.com",
+        status: "Inactive",
+        created: "Mar 23, 2022, 13:00 PM",
+    },
+    {
+        name: "EasyPay",
+        deposit: "65,0000",
+        limit: "80,0000",
+        email: "EasyPay@gmail.com",
+        status: "Active",
+        created: "Mar 23, 2022, 13:00 PM",
+    },
+    {
+        name: "SecurePay",
+        deposit: "90,000",
+        limit: "90,000",
+        email: "SecurePay@gmail.com",
+        status: "Active",
+        created: "Mar 23, 2022, 13:00 PM",
+    },
 ];
 
-const MerchantsHero = () => {
+const ApproverHero = () => {
     const [tempNameFilter, setTempNameFilter] = useState("");
     const [tempStatusFilter, setTempStatusFilter] = useState("");
     const [tempSearchTerm, setTempSearchTerm] = useState("");
@@ -55,8 +54,6 @@ const MerchantsHero = () => {
     const [nameFilter, setNameFilter] = useState("");
     const [statusFilter, setStatusFilter] = useState("");
     const [selectedMerchants, setSelectedMerchants] = useState([]);
-    const [currentPage, setCurrentPage] = useState(1);
-    const [itemsPerPage] = useState(10);
 
     const [showNameDropdown, setShowNameDropdown] = useState(false);
     const [showStatusDropdown, setShowStatusDropdown] = useState(false);
@@ -73,7 +70,6 @@ const MerchantsHero = () => {
         setStatusFilter(tempStatusFilter);
         setLoadClicked(true);
         setSelectedMerchants([]);
-        setCurrentPage(1); // Reset to first page when filters change
     };
 
     const handleReset = () => {
@@ -84,7 +80,6 @@ const MerchantsHero = () => {
         setStatusFilter("");
         setSelectedMerchants([]);
         setLoadClicked(false);
-        setCurrentPage(1); // Reset to first page
     };
 
     useEffect(() => {
@@ -118,32 +113,12 @@ const MerchantsHero = () => {
             merchant.name.toLowerCase().includes(tempSearchTerm.toLowerCase())
         );
 
-    // Get current merchants
-    const indexOfLastItem = currentPage * itemsPerPage;
-    const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-    const currentMerchants = filteredMerchants.slice(indexOfFirstItem, indexOfLastItem);
-    const totalPages = Math.ceil(filteredMerchants.length / itemsPerPage);
-
     const handleCheckboxChange = (email) => {
         setSelectedMerchants((prev) =>
             prev.includes(email)
                 ? prev.filter((id) => id !== email)
                 : [...prev, email]
         );
-    };
-
-    const paginate = (pageNumber) => setCurrentPage(pageNumber);
-
-    const handlePrevPage = () => {
-        if (currentPage > 1) {
-            setCurrentPage(currentPage - 1);
-        }
-    };
-
-    const handleNextPage = () => {
-        if (currentPage < totalPages) {
-            setCurrentPage(currentPage + 1);
-        }
     };
 
     return (
@@ -162,8 +137,8 @@ const MerchantsHero = () => {
                     </div>
                     <div
                         className={`absolute top-[110%] left-0 w-full min-w-[160px] bg-white border border-[#F0F2F4] rounded-md shadow-md transition-all duration-300 ${showNameDropdown
-                            ? "opacity-100 scale-100"
-                            : "opacity-0 scale-95 pointer-events-none"
+                                ? "opacity-100 scale-100"
+                                : "opacity-0 scale-95 pointer-events-none"
                             }`}
                     >
                         <div
@@ -204,8 +179,8 @@ const MerchantsHero = () => {
                     </div>
                     <div
                         className={`absolute top-[110%] left-0 w-full min-w-[120px] bg-white border border-[#F0F2F4] rounded-md shadow-md transition-all duration-300 ${showStatusDropdown
-                            ? "opacity-100 scale-100"
-                            : "opacity-0 scale-95 pointer-events-none"
+                                ? "opacity-100 scale-100"
+                                : "opacity-0 scale-95 pointer-events-none"
                             }`}
                     >
                         <div
@@ -264,14 +239,14 @@ const MerchantsHero = () => {
                         placeholder="Search by merchant name"
                     />
                 </div>
-                <Link href={"/dashboard/merchants/add-new-merchant"} className="bg-purple text-nowrap max-w-max hover:opacity-85 duration-300 flex gap-2.5 items-center cursor-pointer py-1.5 md:py-2.5 px-4 rounded-[10px] text-white">
+                <button className="bg-purple text-nowrap max-w-max hover:opacity-85 duration-300 flex gap-2.5 items-center cursor-pointer py-1.5 md:py-2.5 px-4 rounded-[10px] text-white">
                     <Icons icon={"circleadd"} />
                     <span>Add New Merchant</span>
-                </Link>
+                </button>
             </div>
 
             {/* Table or No Data */}
-            {currentMerchants.length === 0 ? (
+            {filteredMerchants.length === 0 ? (
                 <div className="text-center text-gray-500 text-sm py-10">
                     Data not found
                 </div>
@@ -285,17 +260,17 @@ const MerchantsHero = () => {
                                         type="checkbox"
                                         className="border-[#959BA4] rounded-[5px] cursor-pointer"
                                         checked={
-                                            currentMerchants.length > 0 &&
-                                            selectedMerchants.length === currentMerchants.length
+                                            filteredMerchants.length > 0 &&
+                                            selectedMerchants.length === filteredMerchants.length
                                         }
                                         onChange={() => {
                                             if (
-                                                selectedMerchants.length === currentMerchants.length
+                                                selectedMerchants.length === filteredMerchants.length
                                             ) {
                                                 setSelectedMerchants([]);
                                             } else {
                                                 setSelectedMerchants(
-                                                    currentMerchants.map((m) => m.email)
+                                                    filteredMerchants.map((m) => m.email)
                                                 );
                                             }
                                         }}
@@ -320,7 +295,7 @@ const MerchantsHero = () => {
                             </tr>
                         </thead>
                         <tbody>
-                            {currentMerchants.map((m, i) => (
+                            {filteredMerchants.map((m, i) => (
                                 <tr key={i} className="border-t border-[#E4E6E8]">
                                     <td className="md:px-[15px] py-3 lg:py-[14px] px-2">
                                         <input
@@ -345,8 +320,8 @@ const MerchantsHero = () => {
                                     <td className="w-[100px] px-2.5 text-sm font-bold text-center">
                                         <span
                                             className={`inline-block w-full px-2 py-1 rounded text-xs font-bold ${m.status === "Active"
-                                                ? "bg-[#EDFFEA] text-[#165E3D]"
-                                                : "bg-[#FFEAEA] text-[#B83131]"
+                                                    ? "bg-[#EDFFEA] text-[#165E3D]"
+                                                    : "bg-[#FFEAEA] text-[#B83131]"
                                                 }`}
                                         >
                                             {m.status}
@@ -371,64 +346,19 @@ const MerchantsHero = () => {
             )}
 
             {/* Pagination */}
-            <div className="flex flex-col md:flex-row justify-between items-center mt-4 text-sm pb-6">
-                <p className="text-black order-2 mt-3 md:order-1 text-sm md:text-base">
-                    Showing {indexOfFirstItem + 1}-{Math.min(indexOfLastItem, filteredMerchants.length)} of {filteredMerchants.length}
+            <div className="flex justify-between items-center mt-4 text-sm">
+                <p className="text-black text-sm md:text-base">
+                    Showing {filteredMerchants.length} out of {merchants.length}
                 </p>
-                <div className="flex items-center order-1 md:order-2 gap-2">
-                    <button
-                        className="px-2 py-1 cursor-pointer"
-                        onClick={handlePrevPage}
-                        disabled={currentPage === 1}
-                    >
+                <div className="flex items-center gap-2">
+                    <button className="px-2 py-1">
                         <Icons icon={'nextarrow'} />
                     </button>
-
-                    <button
-                        onClick={() => paginate(1)}
-                        className={`px-3 cursor-pointer py-1 text-base lg:text-lg rounded-[5px] font-medium ${currentPage === 1 ? 'bg-purple text-white' : 'text-[#4B5563]'}`}
-                    >
+                    <button className="px-3 py-1 text-base lg:text-lg rounded-[5px] font-medium bg-purple text-white">
                         1
                     </button>
-                    {currentPage > 3 && (
-                        <span className="px-1">...</span>
-                    )}
-
-                    {Array.from({ length: totalPages }, (_, i) => i + 1)
-                        .filter(number => {
-                            return (
-                                number === currentPage ||
-                                number === currentPage - 1 ||
-                                number === currentPage + 1
-                            ) && number !== 1 && number !== totalPages;
-                        })
-                        .map(number => (
-                            <button
-                                key={number}
-                                onClick={() => paginate(number)}
-                                className={`px-3 cursor-pointer py-1 text-base lg:text-lg rounded-[5px] font-medium ${currentPage === number ? 'bg-purple text-white' : 'text-[#4B5563]'}`}
-                            >
-                                {number}
-                            </button>
-                        ))}
-
-                    {currentPage < totalPages - 2 && (
-                        <span className="px-1">...</span>
-                    )}
-                    {totalPages > 1 && (
-                        <button
-                            onClick={() => paginate(totalPages)}
-                            className={`px-3 cursor-pointer py-1 text-base lg:text-lg rounded-[5px] font-medium ${currentPage === totalPages ? 'bg-purple text-white' : 'text-[#4B5563]'}`}
-                        >
-                            {totalPages}
-                        </button>
-                    )}
-
-                    <button
-                        className="px-2 py-1 cursor-pointer"
-                        onClick={handleNextPage}
-                        disabled={currentPage === totalPages}
-                    >
+                    <button className="px-3 py-1 text-base lg:text-lg font-medium">2</button>
+                    <button className="px-2 py-1 ">
                         <Icons icon={'prevarrow'} />
                     </button>
                 </div>
@@ -437,4 +367,4 @@ const MerchantsHero = () => {
     );
 };
 
-export default MerchantsHero;
+export default ApproverHero;

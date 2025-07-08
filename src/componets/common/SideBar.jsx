@@ -15,22 +15,32 @@ const SideBar = () => {
     const { isSideBarOpen, setIsSideBarOpen } = useLayoutContext();
 
     useEffect(() => {
-        const currentItem = SIDEBAR_DATA_LIST.find(item =>
-            item.path === pathname ||
-            (item.tabData && item.tabData.some(subItem => subItem.path === pathname))
-        );
+        for (const item of SIDEBAR_DATA_LIST) {
+            const tabName = item.title.toLowerCase().replace(/\s+/g, '');
 
-        if (currentItem) {
-            const tabName = currentItem.title.toLowerCase().replace(/\s+/g, '');
-            setActiveTab(tabName);
-            setOpenTab(tabName);
-            setIsSideBarOpen(false);
+            if (item.path && pathname === item.path) {
+                setActiveTab(tabName);
+                setOpenTab(tabName);
+                setIsSideBarOpen(false);
+                break;
+            }
+
+            if (item.tabData) {
+                for (const subItem of item.tabData) {
+                    if (pathname.startsWith(subItem.path)) {
+                        setActiveTab(tabName);   // highlight the sidebar tab
+                        setOpenTab(tabName);     // keep the slider (accordion) open
+                        setIsSideBarOpen(false);
+                        return;
+                    }
+                }
+            }
         }
     }, [pathname]);
 
     return (
-        <div className={` max-w-[280px] w-full z-50 max-lg:fixed max-lg:top-4 duration-300 ${isSideBarOpen ? "left-4" : "-left-full"}`}>
-            <span className={` bg-black/10  w-full h-full fixed top-0 duration-300 lg:hidden z-10 ${isSideBarOpen ? "left-0" : "-left-full"}`}></span>
+        <div className={`max-w-[280px] w-full z-50 max-lg:fixed max-lg:top-4 duration-300 ${isSideBarOpen ? "left-4" : "-left-full"}`}>
+            <span className={`bg-black/10 w-full h-full fixed top-0 duration-300 lg:hidden z-10 ${isSideBarOpen ? "left-0" : "-left-full"}`}></span>
             <div className="relative z-[100] bg-white ps-[18px] py-2 rounded-[10px]">
                 <div className="overflow-y-auto py-2 pe-3 h-[calc(100vh-48px)] lg:h-[calc(100vh-60px)] overflow-clip">
                     <div className="flex justify-between gap-1">
@@ -84,6 +94,7 @@ const SideBar = () => {
                                 >
                                     {item.title}
                                 </MenuItemsWithSub>
+
                             );
                         })}
                     </div>

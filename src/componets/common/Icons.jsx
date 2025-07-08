@@ -236,6 +236,33 @@ const Icons = ({ icon, className }) => {
                 <circle cx="8.23035" cy="3.6457" r="3.21815" fill="#0095FF" />
             </svg>
         ),
+        flag: (
+            <svg width="19" height="20" viewBox="0 0 19 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M9.65319 3C9.94291 3 10.2078 3.16372 10.3374 3.42291L10.891 4.53008H15.4813C15.9038 4.53008 16.2463 4.8726 16.2463 5.29512V13.7106C16.2463 14.1331 15.9038 14.4756 15.4813 14.4756H10.5988C10.3091 14.4756 10.0441 14.3119 9.91453 14.0527L9.36095 12.9455H4.00567V17.5358H2.47559V3H9.65319ZM9.18032 4.53008H4.00567V11.4154H10.3066L11.0717 12.9455H14.7162V6.06016H9.94536L9.18032 4.53008Z" fill="#4B5563" />
+            </svg>
+        ),
+        saving: (
+            <svg
+                className="animate-spin h-5 w-5 text-white"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+            >
+                <circle
+                    className="opacity-25"
+                    cx="12"
+                    cy="12"
+                    r="10"
+                    stroke="currentColor"
+                    strokeWidth="4"
+                ></circle>
+                <path
+                    className="opacity-75"
+                    fill="currentColor"
+                    d="M4 12a8 8 0 018-8v8H4z"
+                ></path>
+            </svg>
+        ),
 
     };
     return icon && ICONS_LIST[icon];

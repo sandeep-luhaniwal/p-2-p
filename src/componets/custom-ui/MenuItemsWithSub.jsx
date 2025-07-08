@@ -27,29 +27,33 @@ const MenuItemsWithSub = ({
         <div>
             <div
                 onClick={handleClick}
-                className={`w-full rounded-xl font-semibold text-sm duration-300 flex items-center gap-3 py-3 px-4 cursor-pointer ${isActive
-                    ? "bg-purple text-white hover:opacity-85"
-                    : "text-grey hover:bg-purple/10 hover:text-purple"
-                    }`}
+                className={`w-full rounded-xl font-semibold text-sm duration-300 flex items-center gap-3 py-3 px-4 cursor-pointer ${
+                    isActive
+                        ? "bg-purple text-white hover:opacity-85"
+                        : "text-grey hover:bg-purple/10 hover:text-purple"
+                }`}
             >
                 <Icons className={isActive ? "fill-white" : ""} icon={icon} />
                 <span>{children}</span>
             </div>
+
             <div
-                className={`flex flex-col gap-4 ps-6 overflow-hidden transition-all ease-in-out duration-300 ${isOpen ? "max-h-44 opacity-100 mt-4" : "max-h-0 opacity-0"
-                    }`}
+                className={`flex flex-col gap-4 ps-6 overflow-hidden transition-all ease-in-out duration-300 ${
+                    isOpen ? "max-h-44 opacity-100 mt-4" : "max-h-0 opacity-0"
+                }`}
             >
                 {submenu.map((item, index) => {
-                    const isSubActive = pathname === item.path;
+                    const isSubActive = pathname.startsWith(item.path); // ✅ match partial routes
 
                     return (
                         <Link
                             key={index}
                             href={item.path}
-                            className={`w-full rounded-xl font-semibold text-sm duration-300 flex items-center gap-2 py-3 px-4 cursor-pointer ${isSubActive
-                                ? "bg-grey-white text-purple hover:opacity-85"
-                                : "text-grey hover:bg-purple/10 hover:text-purple"
-                                }`}
+                            className={`w-full rounded-xl font-semibold text-sm duration-300 flex items-center gap-2 py-3 px-4 cursor-pointer ${
+                                isSubActive
+                                    ? "bg-grey-white text-purple hover:opacity-85"
+                                    : "text-grey hover:bg-purple/10 hover:text-purple"
+                            }`}
                         >
                             <Icons className={isSubActive ? "fill-purple" : ""} icon={item.subicon} />
                             <span>{item.title}</span>
