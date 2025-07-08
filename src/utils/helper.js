@@ -92,3 +92,44 @@ export const SIDEBAR_DATA_LIST = [
         path: "/",
     },
 ];
+
+
+
+
+export const TOADY_SALES_DATA_LIST = [
+    {
+        title: "₹4.5 Lakh",
+        bgColor: "bg-yellow-green",
+        icon: "greenchat",
+        heading: "Approved Today",
+        des: "0,5% from yesterday",
+    },
+    {
+        title: "800",
+        bgColor: "bg-blue-chalk",
+        icon: "pinkthreearrow",
+        heading: "Total Request",
+        des: "0,5% from yesterday",
+    },
+    {
+        title: "20%",
+        bgColor: "bg-white-titan",
+        icon: "bluerightclick",
+        heading: "Request Approved",
+        des: "30 Mins Approving Accuracy",
+    },
+    {
+        title: "5",
+        bgColor: "bg-white-ice",
+        icon: "greennotification",
+        heading: "Active Approvers",
+        des: "+8% from yesterday",
+    },
+    {
+        title: "300",
+        bgColor: "bg-yellow-wish",
+        icon: "ornagehome",
+        heading: "Active Merchants",
+        des: "+8% from yesterday",
+    },
+]

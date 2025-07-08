@@ -1,3 +1,4 @@
+import { LayoutProvider } from "@/context/LayoutContext";
 import "./globals.css";
 
 export const metadata = {
@@ -11,7 +12,9 @@ export default function RootLayout({ children }) {
       <body
         className={`antialiased`}
       >
-        {children}
+        <LayoutProvider>
+          {children}
+        </LayoutProvider>
       </body>
     </html>
   );

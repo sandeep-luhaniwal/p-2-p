@@ -1,13 +1,16 @@
+"use client"
 import React from 'react'
 import Icons from './Icons'
 import Image from 'next/image'
+import { useLayoutContext } from '@/context/LayoutContext';
 
 const NavBar = () => {
+    const { isSideBarOpen, setIsSideBarOpen } = useLayoutContext();
     return (
-        <div className='max-w-[1072px] lg:py-4 lg:px-5 bg-white max-h-max w-full'>
+        <div className='max-w-[1072px] 2xl:mx-auto min-[1441px]:max-w-[1200px] lg:py-4 lg:px-5 bg-white max-h-max w-full'>
             <div className="flex justify-between items-center md:gap-8 lg:gap-10 xl:gap-20">
                 <div className='flex items-center gap-1'>
-                    <div className='lg:hidden'>
+                    <div onClick={() => setIsSideBarOpen(true)} className='lg:hidden'>
                         <Icons icon={'menu'} />
                     </div>
                     <h3 className='text-lg sm:text-xl md:text-[22px] lg:text-2xl leading-140 text-navy font-semibold'>Dashboard</h3>
@@ -20,7 +23,7 @@ const NavBar = () => {
                 </div>
                 <div className="flex gap-2 md:gap-4 items-center">
                     <div className='md:hidden'>
-                         <Icons icon={"search"} />
+                        <Icons icon={"search"} />
                     </div>
                     <div className='cursor-pointer relative w-8 flex justify-center items-center h-8 rounded duration-300 hover:bg-yellow-light'>
                         <Icons icon={"notification"} />

@@ -9,8 +9,8 @@ const Icons = ({ icon, className }) => {
 
         ),
         cross: (
-            <svg className="w-8 md:w-10" xmlns="http://www.w3.org/2000/svg" width="52" height="52" viewBox="0 0 15 15">
-                <path fill="#fff" d="M3.64 2.27L7.5 6.13l3.84-3.84A.92.92 0 0 1 12 2a1 1 0 0 1 1 1a.9.9 0 0 1-.27.66L8.84 7.5l3.89 3.89A.9.9 0 0 1 13 12a1 1 0 0 1-1 1a.92.92 0 0 1-.69-.27L7.5 8.87l-3.85 3.85A.92.92 0 0 1 3 13a1 1 0 0 1-1-1a.9.9 0 0 1 .27-.66L6.16 7.5L2.27 3.61A.9.9 0 0 1 2 3a1 1 0 0 1 1-1c.24.003.47.1.64.27" />
+            <svg className="w-6 sm:w-7 h-7" xmlns="http://www.w3.org/2000/svg" width="52" height="52" viewBox="0 0 15 15">
+                <path fill="#000" d="M3.64 2.27L7.5 6.13l3.84-3.84A.92.92 0 0 1 12 2a1 1 0 0 1 1 1a.9.9 0 0 1-.27.66L8.84 7.5l3.89 3.89A.9.9 0 0 1 13 12a1 1 0 0 1-1 1a.92.92 0 0 1-.69-.27L7.5 8.87l-3.85 3.85A.92.92 0 0 1 3 13a1 1 0 0 1-1-1a.9.9 0 0 1 .27-.66L6.16 7.5L2.27 3.61A.9.9 0 0 1 2 3a1 1 0 0 1 1-1c.24.003.47.1.64.27" />
             </svg>
         ),
         dashboard: (
@@ -216,6 +216,24 @@ const Icons = ({ icon, className }) => {
             <svg width="25" height="23" viewBox="0 0 25 23" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path className={className} d="M12.5 18.7106C13.605 18.7106 14.5 17.9837 14.5 17.0877C14.5 16.1907 13.605 15.4638 12.5 15.4638C11.395 15.4638 10.5 14.7369 10.5 13.841C10.5 12.9429 11.395 12.2171 12.5 12.2171V11.1348M12.5 18.7106C11.63 18.7106 10.888 18.2588 10.614 17.6283M12.5 18.7106L12.503 19.8015M12.5 12.2182C13.37 12.2182 14.112 12.6699 14.386 13.3004" stroke="#737791" strokeWidth="1.625" strokeLinecap="round" strokeLinejoin="round" />
                 <path className={className} d="M21.5 12.2182C21.6545 12.1347 21.7946 12.0229 21.914 11.8878C22.5 11.2313 22.5 10.1707 22.5 8.04951C22.5 5.92835 22.5 4.86885 21.914 4.21018C21.328 3.55151 20.386 3.55151 18.5 3.55151H6.5C4.614 3.55151 3.672 3.55151 3.086 4.21018C2.5 4.86885 2.5 5.92943 2.5 8.04951C2.5 10.1696 2.5 11.2302 3.086 11.8878C3.206 12.0235 3.344 12.1337 3.5 12.2182M5.5 7.88485H19.5" stroke="#737791" strokeWidth="1.625" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+        ),
+        bluelinecircle: (
+            <svg width="17" height="7" viewBox="0 0 17 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1.43628 3.64572H15.024" stroke="#0080DA" strokeWidth="2.14543" strokeLinecap="round" />
+                <circle cx="8.23035" cy="3.6457" r="3.21815" fill="#0095FF" />
+            </svg>
+        ),
+        greenlinecircle: (
+            <svg width="17" height="7" viewBox="0 0 17 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1.43628 3.64572H15.024" stroke="#0080DA" strokeWidth="2.14543" strokeLinecap="round" />
+                <circle cx="8.23035" cy="3.6457" r="3.21815" fill="#0095FF" />
+            </svg>
+        ),
+        greenlinecircle: (
+            <svg width="17" height="7" viewBox="0 0 17 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1.43628 3.64572H15.024" stroke="#0080DA" strokeWidth="2.14543" strokeLinecap="round" />
+                <circle cx="8.23035" cy="3.6457" r="3.21815" fill="#0095FF" />
             </svg>
         ),
 

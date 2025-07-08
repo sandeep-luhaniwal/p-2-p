@@ -1,18 +1,22 @@
 import NavBar from '@/componets/common/NavBar'
 import SideBar from '@/componets/common/SideBar'
+import TodaySales from '@/componets/dashboard/TodaySales'
 import Image from 'next/image'
 import React from 'react'
 
-export default function layoutDashboard() {
+export default function layoutDashboard({ children }) {
     return (
-        <div className='bg-black h-screen p-4 lg:p-7 relative'>
+        <div className='h-screen bg-grey-dark p-4 lg:px-2 lg:pe-0 xl:p-7 relative max-w-[1920px] mx-auto'>
             <Image className='absolute bottom-0 left-0'
                 src={'/assets/images/svg/bottom_line.svg'} height={300} width={300} alt='bottom_line' />
-            <div className='relative z-30 flex gap-7'>
-                <div className={`hidden lg:flex`}>
+            <div className='relative z-30 flex lg:gap-7'>
+                <div className='lg:fixed top-4 lg:left-0 xl:left-4 max-w-[280px]'>
                     <SideBar />
                 </div>
-                <NavBar />
+                <div className='flex flex-col gap-6 xl:gap-9 w-full lg:ml-[280px]'>
+                    <NavBar />
+                    {children}
+                </div>
             </div>
         </div>
     )
