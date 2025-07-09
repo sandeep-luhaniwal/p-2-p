@@ -39,7 +39,7 @@ const CtaDropDown = ({
             </div>
 
             <div
-                className={`absolute top-[110%] left-0 w-full min-w-[160px] z-[10000] bg-white border border-[#F0F2F4] rounded-md shadow-md transition-all duration-300 ${showDropdown ? "opacity-100 scale-100" : "opacity-0 scale-95 pointer-events-none"
+                className={`absolute top-[110%] left-0 w-full min-w-max mx-auto z-[10000] bg-white border border-[#F0F2F4] rounded-md shadow-md transition-all duration-300 ${showDropdown ? "opacity-100 scale-100" : "opacity-0 scale-95 pointer-events-none"
                     }`}
             >
                 <div
@@ -54,7 +54,7 @@ const CtaDropDown = ({
                 {data.map((item, index) => (
                     <div
                         key={index}
-                        className="px-3 py-2 hover:bg-gray-100 cursor-pointer text-sm text-[#4B5563]"
+                        className="px-3 py-2 text-nowrap hover:bg-gray-100 cursor-pointer text-sm text-[#4B5563]"
                         onClick={() => {
                             onChange(item);
                             setShowDropdown(false);

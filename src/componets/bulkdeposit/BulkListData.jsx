@@ -7,6 +7,7 @@ import CtaPagination from "../custom-ui/CtaPagination";
 import CtaSearch from "../custom-ui/CtaSearch";
 import CtaTable from "../custom-ui/CtaTable";
 import Icons from "../common/Icons";
+import UpdateBulkDesposit from "./UpdateBulkDesposit";
 
 const banks = [
     {
@@ -80,6 +81,7 @@ const BulkListData = () => {
     const [itemsPerPage] = useState(10);
     const [loadClicked, setLoadClicked] = useState(false);
     const [popupBank, setPopupBank] = useState(null);
+    const [updateBulkDespositData, setUpdateBulkDespositData] = useState(false);
 
     const bankDropdownRef = useRef(null);
     const fileTypeDropdownRef = useRef(null);
@@ -162,7 +164,7 @@ const BulkListData = () => {
                         Here you can upload statements for bulk deposit.
                     </p>
                 </div>
-                <button className='text-sm md:text-base py-2 cursor-pointer rounded-[10px] px-4 bg-purple flex items-center gap-5 text-white hover:opacity-85 max-w-max'>
+                <button onClick={() => setUpdateBulkDespositData(true)} className='text-sm md:text-base py-2 cursor-pointer rounded-[10px] px-4 bg-purple flex items-center gap-5 text-white hover:opacity-85 max-w-max'>
                     Add New
                     <Icons icon={"puls"} />
                 </button>
@@ -268,6 +270,12 @@ const BulkListData = () => {
                 itemsPerPage={itemsPerPage}
                 onPageChange={paginate}
             />
+
+            {updateBulkDespositData && (
+                <UpdateBulkDesposit updateBulkDespositData={updateBulkDespositData}
+                    setUpdateBulkDespositData={setUpdateBulkDespositData}
+                />
+            )}
         </div>
     );
 };

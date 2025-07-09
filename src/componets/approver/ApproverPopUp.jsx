@@ -4,7 +4,7 @@ import Icons from '../common/Icons'
 const ApproverPopUp = ({ setPopupApprover, popupApprover }) => {
     return (
         <div className={`${popupApprover ? "scale-100 pointer-events-auto" : "scale-0 pointer-events-none"} duration-300 fixed top-0 left-0 bg-black/40 w-full h-full flex justify-center items-center`}>
-            <div className='bg-white rounded-[10px] p-[30px] pe-3 max-w-[592px] relative w-full '>
+             <div className='bg-white rounded-[10px] p-4 md:p-[30px] pe-3 max-w-[610px] w-[90%] relative '>
                 <div onClick={() => setPopupApprover(null)} className='absolute cursor-pointer -top-4 -right-4'>
                     <Icons icon={"whitecross"} />
                 </div>
