@@ -4,9 +4,10 @@ import React from "react";
 import Icons from "../common/Icons";
 import Link from "next/link";
 
-const CtaSearch = ({ searchValue, exportbutton, onChange, icons, placeholder, addLink, children }) => {
+const CtaSearch = ({ searchValue,list, exportbutton, onChange, icons, placeholder, addLink, children }) => {
     return (
         <div className="my-4 md:my-7 lg:my-[30px] flex-col sm:flex-row gap-4 md:gap-6 flex justify-between">
+            {list && <p className="text-xs py-3 md:text-sm text-[#05004E] font-semibold">{list}</p>}
             <div className="max-w-[481px] flex gap-1 w-full px-2 py-2.5">
                 <label htmlFor="searchmerch">
                     <Icons icon="marchentsearch" />

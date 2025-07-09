@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 import InputWithLabelSub from '../custom-ui/InputWithLabelSub';
 import Icons from '../common/Icons';
 import ApproverPopUp from './ApproverPopUp';
+import ApproverMerchantsList from './ApproverMerchantsList';
 
 const AddNewApprover = () => {
     const router = useRouter();
@@ -140,6 +141,7 @@ const AddNewApprover = () => {
                     </button>
                 </div>
             </form>
+            <ApproverMerchantsList />
             <ApproverPopUp />
         </div>
     );
