@@ -60,3 +60,7 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background-color: #4b2e8c;
 }
+
+.overflow_none::-webkit-scrollbar {
+  display: none;
+}

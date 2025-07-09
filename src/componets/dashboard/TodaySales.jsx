@@ -28,7 +28,7 @@ const TodaySales = () => {
     }, []);
 
     return (
-        <div className="max-w-[1072px] 2xl:mx-auto min-[1441px]:max-w-[1200px] lg:p-[22px] bg-white max-h-max w-full relative">
+        <div className="max-w-[1100px] 2xl:mx-auto min-[1441px]:max-w-[1200px] lg:px-[22px] bg-white max-h-max w-full relative">
             <div className="flex items-center justify-between">
                 <div>
                     <p className="text-navy-light text-xs md:text-sm font-semibold leading-140 pb-0.5">
@@ -66,12 +66,12 @@ const TodaySales = () => {
                             ))}
                         </div>
                     </div>
-                    <div className="flex gap-2.5 items-center p-2 cursor-pointer border-grey-off border-[0.8px] h-[31px] rounded-[6px]">
+                    <button className="flex gap-2.5 items-center p-2 cursor-pointer border-grey-off border-[0.8px] h-[31px] rounded-[6px]">
                         <Icons icon={"export"} />
-                        <p className="text-xs md:text-[13px] font-medium text-navy-light leading-100">
+                        <span className="text-xs md:text-[13px] font-medium text-navy-light leading-100">
                             Export CSV
-                        </p>
-                    </div>
+                        </span>
+                    </button>
                 </div>
             </div>
             <TodayCardsDetails />

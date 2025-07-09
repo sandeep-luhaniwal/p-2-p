@@ -3,7 +3,7 @@ import Icons from '../common/Icons'
 
 const TotalRevenue = () => {
     return (
-        <div className="max-w-[1072px] 2xl:mx-auto min-[1441px]:max-w-[1200px] lg:p-[22px] bg-white max-h-max w-full relative">
+        <div className="max-w-[1100px] 2xl:mx-auto min-[1441px]:max-w-[1200px] lg:px-[22px] bg-white max-h-max w-full relative">
             <div className="grid md:col-span-2 lg:grid-cols-[59%_38%] xl:grid-cols-[43%_27%_27%] gap-5">
                 <div className='bg-white border border-[#F8F9FA] row-span-1 rounded-2xl p-[19px] w-full'>
                     <p className="text-navy-light text-xs md:text-sm font-semibold leading-140 pb-4">

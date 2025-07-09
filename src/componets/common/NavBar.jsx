@@ -7,7 +7,7 @@ import { useLayoutContext } from '@/context/LayoutContext';
 const NavBar = () => {
     const { isSideBarOpen, setIsSideBarOpen } = useLayoutContext();
     return (
-        <div className='max-w-[1072px] 2xl:mx-auto min-[1441px]:max-w-[1200px] lg:py-4 lg:px-5 bg-white max-h-max w-full'>
+        <div className='max-w-[1100px] 2xl:mx-auto min-[1441px]:max-w-[1200px] lg:py-4 lg:px-5 bg-white max-h-max w-full'>
             <div className="flex justify-between items-center md:gap-8 lg:gap-10 xl:gap-20">
                 <div className='flex items-center gap-1'>
                     <div onClick={() => setIsSideBarOpen(true)} className='lg:hidden'>

@@ -6,7 +6,7 @@ import React from 'react'
 
 export default function layoutDashboard({ children }) {
     return (
-        <div className='h-screen bg-grey-dark p-4 lg:px-2 lg:pe-0 xl:p-7 relative max-w-[1920px] mx-auto'>
+        <div className='h-screen bg-grey-dark p-4 lg:px-2 lg:pe-0 xl:p-7 xl:pe-1.5 relative max-w-[1920px] mx-auto'>
             <Image className='absolute bottom-0 left-0'
                 src={'/assets/images/svg/bottom_line.svg'} height={300} width={300} alt='bottom_line' />
             <div className='relative z-30 flex lg:gap-7'>

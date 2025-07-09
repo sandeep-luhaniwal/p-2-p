@@ -56,7 +56,7 @@ const AddNewMerchant = () => {
     };
 
     return (
-        <div className="max-w-[1072px] 2xl:mx-auto min-[1441px]:max-w-[1200px] lg:p-[22px] bg-white w-full relative">
+        <div className="max-w-[1100px] 2xl:mx-auto min-[1441px]:max-w-[1200px] lg:px-[22px] bg-white w-full relative">
             <form onSubmit={handleSubmit}>
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-2 xl:grid-cols-3 gap-5">
                     <InputWithLabelSub
@@ -121,8 +121,8 @@ const AddNewMerchant = () => {
                         type="submit"
                         disabled={!isFormValid || loading}
                         className={`text-base font-medium px-5 py-3 rounded-[10px] text-white flex items-center justify-center gap-2 transition-all duration-300 ${isFormValid && !loading
-                                ? 'bg-purple hover:bg-purple/90 cursor-pointer'
-                                : 'bg-purple/65 cursor-not-allowed'
+                            ? 'bg-purple hover:bg-purple/90 cursor-pointer'
+                            : 'bg-purple/65 cursor-not-allowed'
                             }`}
                     >
                         {loading && (
