@@ -103,8 +103,8 @@ const UpdateBulkDesposit = ({ updateBulkDespositData, setUpdateBulkDespositData 
                             </button>
                         </div>
                         <div className="flex justify-end">
-                            <CtaButton left main className={'bg-purple text-white py-3 px-5 cursor-pointer'} onClick={handleSave}>
-                                Save
+                            <CtaButton left main className={'bg-purple text-white flex gap-2 items-center py-3 px-5 cursor-pointer'} onClick={handleSave}>
+                                Save <span><Icons icon={'savebutton'} /></span>
                             </CtaButton>
                         </div>
                     </div>
@@ -144,11 +144,13 @@ const UpdateBulkDesposit = ({ updateBulkDespositData, setUpdateBulkDespositData 
                         <p className='text-base lg:text-lg font-normal text-black/60 mb-4'>All Columns</p>
                         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
                             <InputWithLabelSub
-                                name="utrRegex"
+                                name="txnCode"
                                 type="text"
-                                placeholder=""
+                                className
+                                placeholder="********"
+                                iconValue="toggleactive"
                             >
-                                UTR RegEx is Disabled
+                                Transaction Code
                             </InputWithLabelSub>
                         </div>
                         <div className='mt-8 lg:mt-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4'>
