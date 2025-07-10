@@ -228,7 +228,7 @@ const AutoDeposit = () => {
         />
         <CtaButton
           left
-          className={`${loadClicked ? "bg-purple text-white" : "bg-[#ECE8F2] text-[#4B5563]"
+          className={`${loadClicked ? "bg-purple text-white" : "bg-purple text-white"
             }`}
           onClick={handleLoad}
           main

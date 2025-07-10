@@ -1,19 +1,41 @@
 "use client"
-import React from 'react'
-import Icons from './Icons'
-import Image from 'next/image'
 import { useLayoutContext } from '@/context/LayoutContext';
+import Image from 'next/image';
+import { usePathname } from 'next/navigation';
+import Icons from './Icons';
+
+const titleMap = {
+    "/dashboard": "Dashboard",
+    "/dashboard/merchants": "User Management",
+    "/dashboard/merchants/add-new-merchant": "Add New Merchant",
+    "/dashboard/approvers": "User Management",
+    "/dashboard/approvers/add-new-approvers": "Add New Approver",
+    "/dashboard/auto-deposit": "Auto Deposit Report",
+    "/dashboard/bulk-deposit": "Bulk Deposit Sheet",
+    "/dashboard/payment-reports": "Payment Reports",
+    "/dashboard/settings": "Setting",
+};
 
 const NavBar = () => {
-    const { isSideBarOpen, setIsSideBarOpen } = useLayoutContext();
+    const { setIsSideBarOpen } = useLayoutContext();
+    const pathname = usePathname();
+
+    const pageTitle = titleMap[pathname] || "Dashboard";
     return (
         <div className='max-w-[1100px] 2xl:mx-auto min-[1441px]:max-w-[1200px] lg:py-4 lg:px-5 bg-white max-h-max w-full'>
-            <div className="flex justify-between items-center md:gap-8 lg:gap-10 xl:gap-20">
+            <div className="flex justify-between items-center md:gap-8  xl:gap-20">
                 <div className='flex items-center gap-1'>
                     <div onClick={() => setIsSideBarOpen(true)} className='lg:hidden'>
                         <Icons icon={'menu'} />
                     </div>
-                    <h3 className='text-lg sm:text-xl md:text-[22px] lg:text-2xl leading-140 text-navy font-semibold'>Dashboard</h3>
+                    <Image
+                        src="/assets/images/png/sidebar_logo.png"
+                        className="min-w-[110px] w-[150px] lg:hidden md:w-[180px] lg:w-[217px] h-auto"
+                        height={59}
+                        width={217}
+                        alt="page-logo"
+                    />
+                    <h3 className='text-lg hidden lg:flex sm:text-base text-nowrap xl:text-2xl leading-140 text-navy font-semibold'>{pageTitle}</h3>
                 </div>
                 <div className='gap-2  hidden md:flex items-center max-w-[497px] w-full px-4 py-3.5'>
                     <label htmlFor="search" className='cursor-pointer'>
@@ -43,6 +65,7 @@ const NavBar = () => {
                     </div>
                 </div>
             </div>
+            <h3 className='text-[22px] lg:hidden sm:text-2xl text-nowrap pt-6 leading-140 text-navy font-semibold'>{pageTitle}</h3>
         </div>
     )
 }

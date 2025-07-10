@@ -144,7 +144,7 @@ const ApproverHero = () => {
                     dropdownRef={statusDropdownRef}
                 />
 
-                <CtaButton left className={`${loadClicked ? "bg-purple text-white" : "bg-[#ECE8F2] text-[#4B5563]"}`} onClick={handleLoad} main>Load</CtaButton>
+                <CtaButton left className={`${loadClicked ? "bg-purple text-white" : "bg-purple text-white"}`} onClick={handleLoad} main>Load</CtaButton>
                 <CtaButton left main onClick={handleReset}>Reset</CtaButton>
 
             </div>
