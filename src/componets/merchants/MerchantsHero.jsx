@@ -152,7 +152,7 @@ const MerchantsHero = () => {
     };
 
     return (
-        <div className="max-w-[1100px] 2xl:mx-auto min-[1441px]:max-w-[1200px] lg:px-[22px] bg-white w-full relative">
+        <div className="max-w-[1100px] 2xl:mx-auto min-[1441px]:max-w-[1200px] lg:px-[22px] bg-white w-full relative py-3 rounded-xl">
             <div className="flex flex-wrap gap-y-2.5 md:gap-y-5 gap-5">
                 <CtaDropDown
                     data={uniqueNames}

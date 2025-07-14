@@ -10,6 +10,7 @@ const CtaDropDown = ({
     placeholder = "Select option",
     icon = null,
     dropdownRef = null,
+    className
 }) => {
     const [showDropdown, setShowDropdown] = useState(false);
     const localRef = useRef(null);
@@ -28,7 +29,7 @@ const CtaDropDown = ({
     return (
         <div className="relative" ref={ref}>
             <div
-                className="border cursor-pointer border-[#F0F2F4] flex gap-2.5 py-1.5 px-2.5 rounded-lg items-center"
+                className={`border cursor-pointer border-[#F0F2F4] flex gap-2.5 py-1.5 px-2.5 rounded-lg items-center ${className}`}
                 onClick={() => setShowDropdown(!showDropdown)}
             >
                 {icon && <Icons icon={icon} />}

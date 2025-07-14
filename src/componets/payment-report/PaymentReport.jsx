@@ -205,7 +205,7 @@ const PaymentReport = () => {
     };
 
     return (
-        <div className="max-w-[1100px] 2xl:mx-auto min-[1441px]:max-w-[1200px] overflow-clip lg:px-[22px] bg-white w-full relative">
+        <div className="max-w-[1100px] 2xl:mx-auto py-3 rounded-xl min-[1441px]:max-w-[1200px] overflow-clip lg:px-[22px] bg-white w-full relative">
 
             <div className="max-w-[888px] grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-7 lg:grid-cols-3 mb-7 md:mb-8 lg:mb-10">
                 <div className="bg-white rounded-[10px] flex gap-2.5 py-3 px-4">

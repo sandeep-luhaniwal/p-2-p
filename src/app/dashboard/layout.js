@@ -1,8 +1,6 @@
 import NavBar from '@/componets/common/NavBar'
 import SideBar from '@/componets/common/SideBar'
-import TodaySales from '@/componets/dashboard/TodaySales'
 import Image from 'next/image'
-import React from 'react'
 
 export default function layoutDashboard({ children }) {
     return (
@@ -13,7 +11,7 @@ export default function layoutDashboard({ children }) {
                 <div className='lg:fixed top-4 lg:left-0 xl:left-4 max-w-[280px]'>
                     <SideBar />
                 </div>
-                <div className='flex flex-col gap-6 xl:gap-9 w-full lg:ml-[280px]'>
+                <div className='flex flex-col gap-6 xl:gap-7 w-full lg:ml-[280px]'>
                     <NavBar />
                     {children}
                 </div>

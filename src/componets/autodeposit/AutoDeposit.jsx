@@ -194,7 +194,7 @@ const AutoDeposit = () => {
   };
 
   return (
-    <div className="max-w-[1100px] 2xl:mx-auto min-[1441px]:max-w-[1200px] overflow-clip lg:px-[22px] bg-white w-full relative">
+    <div className="max-w-[1100px] 2xl:mx-auto min-[1441px]:max-w-[1200px] overflow-clip lg:px-[22px] py-3 rounded-xl bg-white w-full relative">
       <div className="flex flex-wrap gap-y-2.5 md:gap-y-5 gap-5 items-center">
         <CtaDropDown
           data={uniqueEntryDates}

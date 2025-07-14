@@ -5,7 +5,7 @@ import Icons from '../common/Icons'
 
 const TopApprovers = () => {
     return (
-        <div className="max-w-[1100px] 2xl:mx-auto min-[1441px]:max-w-[1200px] lg:px-[22px] bg-white max-h-max w-full relative xl:-mt-6">
+        <div className="max-w-[1100px] 2xl:mx-auto min-[1441px]:max-w-[1200px] lg:px-[22px] py-3 rounded-xl bg-white max-h-max w-full relative xl:-mt-6">
             <div className="grid md:col-span-2 lg:grid-cols-[59%_38%] xl:grid-cols-[43%_27%_27%] gap-5">
                 <TopApproversTable />
                 <div className='bg-white border border-[#F8F9FA] rounded-2xl p-[19px] lg:px-2 w-full'>

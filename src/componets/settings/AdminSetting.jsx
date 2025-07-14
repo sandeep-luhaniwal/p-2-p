@@ -25,7 +25,7 @@ const settingdata = [
 
 const AdminSetting = () => {
     return (
-        <div className="max-w-[1100px] 2xl:mx-auto min-[1441px]:max-w-[1200px] overflow-clip lg:px-[22px] bg-white w-full relative">
+        <div className="max-w-[1100px] py-3 rounded-xl 2xl:mx-auto min-[1441px]:max-w-[1200px] overflow-clip lg:px-[22px] bg-white w-full relative">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-7">
                 {settingdata.map((obj, i) => {
                     return (
