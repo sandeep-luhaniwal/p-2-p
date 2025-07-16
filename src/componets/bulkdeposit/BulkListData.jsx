@@ -190,7 +190,7 @@ const BulkListData = () => {
                     data={uniqueStatuses}
                     value={tempStatusFilter}
                     onChange={setTempStatusFilter}
-                    placeholder="Status"
+                    placeholder="All"
                     dropdownRef={statusDropdownRef}
                 />
                 <CtaButton

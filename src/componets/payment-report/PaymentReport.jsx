@@ -270,12 +270,6 @@ const PaymentReport = () => {
                     onChange={setTempMerchantFilter}
                     placeholder="Merchant Name"
                 />
-                <CtaDropDown
-                    data={uniqueStatuses}
-                    value={tempStatusFilter}
-                    onChange={setTempStatusFilter}
-                    placeholder="Status"
-                />
                 <CtaButton
                     left
                     className={`${loadClicked ? "bg-purple text-white" : "bg-purple text-white"}`}

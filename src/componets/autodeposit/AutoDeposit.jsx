@@ -214,17 +214,18 @@ const AutoDeposit = () => {
           onChange={setTempApproverFilter}
           placeholder="Approver Name"
         />
-        <CtaDropDown
+        {/* <CtaDropDown
           data={uniqueMerchants}
           value={tempMerchantFilter}
           onChange={setTempMerchantFilter}
           placeholder="Merchant Name"
-        />
+        /> */}
         <CtaDropDown
           data={uniqueStatuses}
           value={tempStatusFilter}
           onChange={setTempStatusFilter}
           placeholder="Status"
+          icon={"flag"}
         />
         <CtaButton
           left
